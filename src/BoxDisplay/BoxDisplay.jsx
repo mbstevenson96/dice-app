@@ -1,33 +1,16 @@
-import React, { useState } from "react";
 import Box from "../Box/Box";
 import style from './BoxDisplay.module.css'
 
 const BoxDisplay = ({ numBoxes }) => {
 
   const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
-
-  let randomColor = colors[Math.floor(Math.random() * colors.length)]
   
-  const [color, setColor] = useState(randomColor)
-
-  const boxes = Array.from({length: numBoxes})
-  
-  function chooseColor(){
-    let newColor = colors[Math.floor(Math.random() * colors.length)]
-    do {
-      newColor = colors[Math.floor(Math.random() * colors.length)]
-    } while (newColor === color)
-    setColor(newColor)
-  }
-
   return ( 
-    <>
     <div className={style.boxContainer}>
-      {boxes.map(()=>(
-        <Box chooseColor={chooseColor} colors={colors} color={color}/>
+      {Array.from({length: numBoxes}).map((box)=>(
+        <Box colors={colors} key={'box-instance-' + JSON.stringify(box)}/>
       ))}
     </div>
-    </>
   );
 }
 
