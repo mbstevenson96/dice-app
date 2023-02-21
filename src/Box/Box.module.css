@@ -1,4 +1,5 @@
 .Box {
-  height: 20em;
-  width: 20em;
+  height: 10em;
+  width: 10em;
+  border: 4px solid whitesmoke;
 }

@@ -4,7 +4,7 @@ import BoxDisplay from './BoxDisplay/BoxDisplay';
 function App() {
   return (
     <>
-      <BoxDisplay numBoxes={12}/>
+      <BoxDisplay numBoxes={15}/>
     </>
   );
 }
