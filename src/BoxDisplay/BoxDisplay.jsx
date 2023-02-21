@@ -7,8 +7,8 @@ const BoxDisplay = ({ numBoxes }) => {
   
   return ( 
     <div className={style.boxContainer}>
-      {Array.from({length: numBoxes}).map((box)=>(
-        <Box colors={colors} key={'box-instance-' + JSON.stringify(box)}/>
+      {Array.from({length: numBoxes}).map((box, idx)=>(
+        <Box colors={colors} key={'box-instance-' + (idx)}/>
       ))}
     </div>
   );
