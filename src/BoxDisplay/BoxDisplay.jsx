@@ -14,11 +14,9 @@ const BoxDisplay = ({ numBoxes }) => {
   
   function chooseColor(){
     let newColor = colors[Math.floor(Math.random() * colors.length)]
-    
     do {
       newColor = colors[Math.floor(Math.random() * colors.length)]
     } while (newColor === color)
-
     setColor(newColor)
   }
 
@@ -26,7 +24,7 @@ const BoxDisplay = ({ numBoxes }) => {
     <>
     <div className={style.boxContainer}>
       {boxes.map(()=>(
-        <Box color={color} chooseColor={chooseColor} colors={colors} />
+        <Box chooseColor={chooseColor} colors={colors} color={color}/>
       ))}
     </div>
     </>

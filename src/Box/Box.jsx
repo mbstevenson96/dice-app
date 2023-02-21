@@ -3,13 +3,15 @@ import style from './Box.module.css'
 
 const Box = ({ chooseColor, color }) => {
 
-  function handleClick(e) {
-    chooseColor()
-  }
+  // const handleClick = (event) => {
+  //   event.target.preventDefault()
+  //   event.target.chooseColor()
+  //   console.log('this div was clicked')
+  // }
   
   return ( 
     <>
-      <div onClick={() => handleClick()} className={style.Box} style={{ backgroundColor: color }}></div>
+      <div onClick={(e)=> chooseColor()} className={style.Box} style={{ backgroundColor: color }}></div>
     </>
   );
 }
