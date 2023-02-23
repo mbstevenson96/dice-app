@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "./Hangman.module.css"
 import img0 from "../HangmanAssests/0.jpg";
 import img1 from "../HangmanAssests/1.jpg";
@@ -19,9 +19,9 @@ const Hangman = () => {
   const [answer, setAnswer] = useState('apple')
 
   function guessedWord() {
-    return this.state.answer
+    return answer
       .split("")
-      .map(ltr => (this.state.guessed.has(ltr) ? ltr : "_"));
+      .map(ltr => (guessed.has(ltr) ? ltr : "_"));
   }
 
   function handleGuess(evt) {
@@ -29,7 +29,7 @@ const Hangman = () => {
     setGuessed(guessed.add(ltr))
     setNWrong(nWrong + (answer.includes(ltr) ? 0 : 1))
     setNRight(nRight + (answer.includes(ltr) ? 1 : 0))
-    
+
     // this.setState(st => ({
     //   guessed: st.guessed.add(ltr),
     //   nWrong: st.nWrong + (st.answer.includes(ltr) ? 0 : 1)
@@ -53,8 +53,8 @@ const Hangman = () => {
     <div className={styles.Hangman}>
       <h1>Hangman</h1>
       <img src={images[nWrong]} alt='images' />
-      <p className='Hangman-word'>{this.guessedWord()}</p>
-      <p className='Hangman-btns'>{this.generateButtons()}</p>
+      <p className='Hangman-word'>{guessedWord()}</p>
+      <p className='Hangman-btns'>{generateButtons()}</p>
     </div>
   );
 }
