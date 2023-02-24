@@ -53,9 +53,9 @@ const Hangman = () => {
     <div className={styles.Hangman}>
       <h1>Hangman</h1>
       <img src={images[nWrong]} alt='images' />
-      <p>Guessed: {nWrong}</p>
-      <p className='Hangman-word'>{guessedWord()}</p>
-      <p className='Hangman-btns'>{generateButtons()}</p>
+      <p>Guessed Wrong: {nWrong}</p>
+      <p className={styles.HangmanWord}>{guessedWord()}</p>
+      <p className={styles.HangmanBtns}>{generateButtons()}</p>
     </div>
   );
 }

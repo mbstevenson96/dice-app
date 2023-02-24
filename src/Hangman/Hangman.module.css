@@ -18,13 +18,13 @@
   margin-top: 0;
 }
 
-.Hangman-word {
+.HangmanWord {
   letter-spacing: 1em;
   margin: 0.4em -1em 0.2em 0;
   font-size: 2rem;
 }
 
-.Hangman-btns {
+.HangmanBtns {
   text-align: center;
   display: inline-block;
   width: 250px;
